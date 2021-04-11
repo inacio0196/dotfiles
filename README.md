@@ -34,7 +34,7 @@ Give a ⭐️ if this project helped you!
 
 3. A simplicidade, ela não abre nenhum tipo de lançador de aplicativos nem nada além de mostrar informações básicas, mas poderia fazer esse tipo de coisa tranquilamente, basta colocar a mão na massa e fazer acontecer 😎.
 
-![pywall](https://camo.githubusercontent.com/9b7a3c3b4f5830992182dc1f11b9899ec31e7e190b4adc25ad86efa558685026/68747470733a2f2f692e696d6775722e636f6d2f3557674d4143652e676966)
+<h3 align="center"><img src="https://i.imgur.com/5WgMACe.gif" width="200px"></h3>
 
 Você ainda pode utilizar a sua polybar em conjunto com o ![pywall](https://github.com/dylanaraps/pywal) para que ela sempre fique combinando com o seu papel de parede.
 
