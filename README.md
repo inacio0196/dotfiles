@@ -12,7 +12,7 @@
 👤 **Rafael**
 
 * Github: [@inacio0196](https://github.com/inacio0196)
-* LinkedIn: [@Rafael Inácio](https://linkedin.com/in/Rafael Inácio)
+* LinkedIn: [@Rafael Inácio](https://www.linkedin.com/in/rafael-in%C3%A1cio-53a3ab1a2/)
 
 ## Show your support
 
