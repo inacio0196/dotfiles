@@ -34,6 +34,10 @@ Give a ⭐️ if this project helped you!
 
 3. A simplicidade, ela não abre nenhum tipo de lançador de aplicativos nem nada além de mostrar informações básicas, mas poderia fazer esse tipo de coisa tranquilamente, basta colocar a mão na massa e fazer acontecer 😎.
 
+![pywall](https://camo.githubusercontent.com/9b7a3c3b4f5830992182dc1f11b9899ec31e7e190b4adc25ad86efa558685026/68747470733a2f2f692e696d6775722e636f6d2f3557674d4143652e676966)
+
+Você ainda pode utilizar a sua polybar em conjunto com o ![pywall](https://github.com/dylanaraps/pywal) para que ela sempre fique combinando com o seu papel de parede.
+
 ## Desktop
 
 ![desktop](./screenshots/desktop.png)
@@ -46,11 +50,11 @@ Give a ⭐️ if this project helped you!
 
 ## Rofi
 
-> Rofi , como dmenu, fornecerá ao usuário uma lista textual de opções onde uma ou mais podem ser selecionadas. Isso pode ser a execução de um aplicativo, a seleção de uma janela ou opções fornecidas por um script externo.
+> Rofi , como dmenu, fornecerá ao usuário uma lista textual de opções onde uma ou mais podem ser selecionadas. Isso pode ser a execução de um aplicativo, a seleção de uma janela ou opções fornecidas por um script externo e pode facilmente ser acessado após um atalho criado dentro do arquivo de configuração no i3wm.
 
 ![rofi](./screenshots/rofi.png)
 
-- O [rofi](https://github.com/davatorium/rofi) pode ser muito mais que um simples lançador de aplicativos, o que tenho aqui por exemplo é como um primo do [Spotlight](https://support.apple.com/pt-br/guide/mac-help/mchlp1008/mac) porém na minha versão ele por enquanto só é capaz de fazer essas coisas:
+- O [rofi](https://github.com/davatorium/rofi) pode ser muito mais que um simples lançador de aplicativos, o que tenho aqui por exemplo é como um primo do [Spotlight](https://support.apple.com/pt-br/guide/mac-help/mchlp1008/mac) porém na minha configuração ele por enquanto só é capaz de fazer essas coisas:
 
 - [x] Pesquisar programas pelo nome.
 - [x] Selecionar e Abrir todas as janelas ativas.
