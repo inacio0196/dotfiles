@@ -44,3 +44,8 @@ Give a ⭐️ if this project helped you!
 
 - Não preciso fazer uso do mouse para navegar entre as telas pode parecer bobeira mas isso poupa 🕐 a longo prazo, a divisão por **Áreas de Trabalho** facilita muito depois que se torna um comportamento automático usar teclas de atalho para quase tudo deixa tudo mais ágil. O arquivo de configuração padrão é bem amigável 🤝 e nele você automatizar quase tudo como por exemplo rodar um script ou comando sempre que iniciar o computador. 🦸 Você pode dar uma olhada no meu em **config/i3/config**.
 
+![rofi](./screenshots/rofi.png)
+
+*Rofi*
+
+
