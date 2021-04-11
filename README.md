@@ -20,6 +20,10 @@ Give a ⭐️ if this project helped you!
 
 ***
 
+## Polybar
+
+![polybar](./screenshots/polybar.png)
+
 ## Desktop
 
 ![desktop](./screenshots/desktop.png)
