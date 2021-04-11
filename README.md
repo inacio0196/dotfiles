@@ -19,3 +19,7 @@
 Give a ⭐️ if this project helped you!
 
 ***
+
+## Desktop
+
+![desktop](./screenshots/desktop.png)
