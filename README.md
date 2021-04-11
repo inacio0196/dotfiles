@@ -38,14 +38,22 @@ Give a ⭐️ if this project helped you!
 
 ![desktop](./screenshots/desktop.png)
 
-*i3wm*
+*Puramente i3wm*
 
 > i3 é um gerenciador de janelas lado a lado , totalmente escrito do zero.
 
 - Não preciso fazer uso do mouse para navegar entre as telas pode parecer bobeira mas isso poupa 🕐 a longo prazo, a divisão por **Áreas de Trabalho** facilita muito depois que se torna um comportamento automático usar teclas de atalho para quase tudo deixa tudo mais ágil. O arquivo de configuração padrão é bem amigável 🤝 e nele você automatizar quase tudo como por exemplo rodar um script ou comando sempre que iniciar o computador. 🦸 Você pode dar uma olhada no meu em **config/i3/config**.
 
+## Rofi
+
+> Rofi , como dmenu, fornecerá ao usuário uma lista textual de opções onde uma ou mais podem ser selecionadas. Isso pode ser a execução de um aplicativo, a seleção de uma janela ou opções fornecidas por um script externo.
+
 ![rofi](./screenshots/rofi.png)
 
-*Rofi*
+- O [rofi](https://github.com/davatorium/rofi) pode ser muito mais que um simples lançador de aplicativos, o que tenho aqui por exemplo é como um primo do [Spotlight](https://support.apple.com/pt-br/guide/mac-help/mchlp1008/mac) porém na minha versão ele por enquanto só é capaz de fazer essas coisas:
 
+- [x] Pesquisar programas pelo nome.
+- [x] Selecionar e Abrir todas as janelas ativas.
+- [x] Rodar comandos do terminal sem abrir o mesmo.
 
+Veja que na imagem existe uma sessão chamada **tools**, ainda estou trabalhando nela aos poucos, mas a ideia é basicamente promover alguns comandos "quebra-galho" de forma que possam ser acessados de forma rápida sempre que necessário.
