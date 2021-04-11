@@ -28,12 +28,19 @@ Give a ⭐️ if this project helped you!
 
 *O que me fez utilizar no dia a dia?*
 
-1. Vocễ pode criar modulos personalizados para qualquer tipo de tarefa, o modulo USD por exemplo é feito em Shell Script, básicamente ele baixa o html de um site com a cotação do dolar, filtra o valor atual e mostra o resultado. Você pode conferir o código dando uma olhada em **config/polybar/shapes/scripts**
+1. Vocễ pode criar modulos personalizados para qualquer tipo de tarefa, o modulo USD por exemplo é feito em Shell Script, básicamente ele baixa o html de um site com a cotação do dolar, filtra o valor atual e mostra o resultado. Você pode conferir o código dando uma olhada em **config/polybar/shapes/scripts/getDollar.sh**.
 
-2. O [polybar](https://github.com/polybar/polybar) se mostra uma opção mais completa comparado a barra de status padrão do [i3wm](https://i3wm.org/).
+2. O [polybar](https://github.com/polybar/polybar) se mostra uma opção mais completa e elegante comparado a barra de status padrão do [i3wm](https://i3wm.org/).
 
 3. A simplicidade, ela não abre nenhum tipo de lançador de aplicativos nem nada além de mostrar informações básicas, mas poderia fazer esse tipo de coisa tranquilamente, basta colocar a mão na massa e fazer acontecer 😎.
 
 ## Desktop
 
 ![desktop](./screenshots/desktop.png)
+
+*i3wm*
+
+> i3 é um gerenciador de janelas lado a lado , totalmente escrito do zero.
+
+- Não preciso fazer uso do mouse para navegar entre as telas pode parecer bobeira mas isso poupa 🕐 a longo prazo, a divisão por **Áreas de Trabalho** facilita muito depois que se torna um comportamento automático usar teclas de atalho para quase tudo deixa tudo mais ágil. O arquivo de configuração padrão é bem amigável 🤝 e nele você automatizar quase tudo como por exemplo rodar um script ou comando sempre que iniciar o computador. 🦸 Você pode dar uma olhada no meu em **config/i3/config**.
+
