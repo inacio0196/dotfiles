@@ -31,7 +31,8 @@ Give a ⭐️ if this project helped you!
 1. Vocễ pode criar modulos personalizados para qualquer tipo de tarefa, o modulo USD por exemplo é feito em Shell Script, básicamente ele baixa o html de um site com a cotação do dolar, filtra o valor atual e mostra o resultado. Você pode conferir o código dando uma olhada em **config/polybar/shapes/scripts**
 
 2. O [polybar](https://github.com/polybar/polybar) se mostra uma opção mais completa comparado a barra de status padrão do [i3wm](https://i3wm.org/).
-3. Third item
+
+3. A simplicidade, ela não abre nenhum tipo de lançador de aplicativos nem nada além de mostrar informações básicas, mas poderia fazer esse tipo de coisa tranquilamente, basta colocar a mão na massa e fazer acontecer 😎.
 
 ## Desktop
 
