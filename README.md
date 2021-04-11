@@ -1,9 +1,6 @@
-<h1 align="center">Welcome to dotfiles 👋</h1>
-<p>
-  <a href="https://www.npmjs.com/package/dotfiles" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/dotfiles.svg">
-  </a>
-</p>
+<h1 align="center">
+  <img alt="dotfiles-logo" src="https://camo.githubusercontent.com/1b1a8b1dca974e2949a1bef313dd439754f71bec9bfaafe434fca84b4e7db8d3/68747470733a2f2f63646e2e7261776769742e636f6d2f64617669646f736f6d657468696e672f646f7466696c65732f6d61737465722f6d6574612f646f7466696c65732d6c6f676f2e706e67" />
+</h1>
 
 > Um backup das minhas configurações pessoais
 
@@ -36,7 +33,7 @@ Give a ⭐️ if this project helped you!
 
 <h3 align="center"><img src="https://i.imgur.com/5WgMACe.gif" width="200px"></h3>
 
-Você ainda pode utilizar a sua polybar em conjunto com o ![pywall](https://github.com/dylanaraps/pywal) para que ela sempre fique combinando com o seu papel de parede.
+Você ainda pode utilizar a sua polybar em conjunto com o [pywall](https://github.com/dylanaraps/pywal) para que ela sempre fique combinando com o seu papel de parede. 🤯
 
 ## Desktop
 
