@@ -22,15 +22,15 @@ Give a ⭐️ if this project helped you!
 
 ## Polybar
 
-> O Polybar tem como objetivo ajudar os usuários a construir belas e altamente personalizáveis ​​barras de status para seu ambiente de desktop. Aqui está uma captura de tela mostrando como pode ser:
+> O Polybar tem como objetivo ajudar os usuários a construir belas e altamente personalizáveis ​​barras de status para seu ambiente de desktop. Aqui está uma captura de tela mostrando a minha configuração atual:
 
 ![polybar](./screenshots/polybar.png)
 
-*Vantagens*
+*O que me fez utilizar no dia a dia?*
 
-1. Vocễ pode criar modulos personalizados para qualquer tipo de tarefa, o modulo USD por exemplo é feito em Shell Script, básicamente ele baixa o html de um site com a cotação do dollar, filtra o valor atual e mostra o resultado.
+1. Vocễ pode criar modulos personalizados para qualquer tipo de tarefa, o modulo USD por exemplo é feito em Shell Script, básicamente ele baixa o html de um site com a cotação do dolar, filtra o valor atual e mostra o resultado. Você pode conferir o código dando uma olhada em **config/polybar/shapes/scripts**
 
-2. Second item
+2. O [polybar](https://github.com/polybar/polybar) se mostra uma opção mais completa comparado a barra de status padrão do [i3wm](https://i3wm.org/).
 3. Third item
 
 ## Desktop
