@@ -56,5 +56,12 @@ Você ainda pode utilizar a sua polybar em conjunto com o [pywall](https://githu
 - [x] Pesquisar programas pelo nome.
 - [x] Selecionar e Abrir todas as janelas ativas.
 - [x] Rodar comandos do terminal sem abrir o mesmo.
+- [x] Calculadora que efetua calculos em tempo de execução.
+- [x] Clipboard armaneza todos os comandos copiados: limite 50 items por padrão.
+- [x] Finder busca arquivos pelo nome dentro do seu diretório pessoal.
+- [x] History exibe uma lista com todos os commandos já executados no terminal.
+- [x] Seleção de monitor.
+- [x] Seleção de saída de aúdio.
+- [x] Todo lista de tarefas.
 
 Veja que na imagem existe uma sessão chamada **tools**, ainda estou trabalhando nela aos poucos, mas a ideia é basicamente promover alguns comandos "quebra-galho" de forma que possam ser acessados de forma rápida sempre que necessário.
