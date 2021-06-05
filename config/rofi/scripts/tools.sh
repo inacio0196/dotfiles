@@ -1,179 +1,89 @@
 #!/usr/bin/env bash
+# author: unknown
+# sentby: MoreChannelNoise (https://www.youtube.com/user/MoreChannelNoise)
+# editby: gotbletu (https://www.youtube.com/user/gotbletu)
 
-## rofi-screenshot
-## Author: ceuk @ github
-## Licence: WTFPL
-## Usage: 
-##    show the menu with rofi-screenshot
-##    stop recording with rofi-screenshot -s
+# demo: https://www.youtube.com/watch?v=kxJClZIXSnM
+# info: this is a script to launch other rofi scripts,
+#       saves us the trouble of binding multiple hotkeys for each script,
+#       when we can just use one hotkey for everything.
 
-# Screenshot directory
-screenshot_directory="$HOME/Imagens/Screenshots"
+declare -A LABELS
+declare -A COMMANDS
 
-# set ffmpeg defaults
-ffmpeg() {
-    command ffmpeg -hide_banner -loglevel error -nostdin "$@"
+# List of defined 'bangs'
+COMMANDS["clipboard"]='rofi -modi "clipboard:~/.config/rofi/bin/greenclip print" -show clipboard'
+LABELS["clipboard"]=""
+
+COMMANDS["history"]="~/.config/rofi/scripts/history.sh"
+LABELS["history"]=""
+
+COMMANDS["monitor"]="~/.config/rofi/scripts/monitor.sh"
+LABELS["monitor"]=""
+
+COMMANDS["sound"]="~/.config/rofi/scripts/sound.sh"
+LABELS["sound"]=""
+
+COMMANDS["todo"]='~/.config/rofi/scripts/todo.sh'
+LABELS["todo"]=""
+
+COMMANDS["finder"]='~/.config/rofi/scripts/finder.sh'
+LABELS["finder"]=""
+
+COMMANDS["calculator"]='rofi -show calc -modi calc -no-show-match -no-sort'
+LABELS["calculator"]=""
+
+################################################################################
+# do not edit below
+################################################################################
+##
+# Generate menu
+##
+function print_menu()
+{
+    for key in ${!LABELS[@]}
+    do
+#   echo "$key    ${LABELS}"
+    echo "$key    ${LABELS[$key]}"
+     # my top version just shows the first field in labels row, not two words side by side
+    done
+}
+##
+# Show rofi.
+##
+function start()
+{
+    # print_menu | rofi -dmenu -p "?=>" 
+    print_menu | sort | rofi -dmenu -i -p "Tools"
+
 }
 
-video_to_gif() {
-    ffmpeg -i "$1" -vf palettegen -f image2 -c:v png - |
-    ffmpeg -i "$1" -i - -filter_complex paletteuse "$2"
-}
 
-countdown() {
-  notify-send "Screenshot" "Recording in 3 seconds" -t 1000
-  sleep 1
-  notify-send "Screenshot" "Recording in 2 seconds" -t 1000
-  sleep 1
-  notify-send "Screenshot" "Recording in 1 seconds" -t 1000
-  sleep 1
-}
+# Run it
+value="$(start)"
 
-crtc() {
-  scrot -s 'Screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Imagens/'
-  notify-send "Screenshot" "A Screenshot foi salva na pasta Imagens"
-}
+# Split input.
+# grab upto first space.
+choice=${value%%\ *}
+# graph remainder, minus space.
+input=${value:$((${#choice}+1))}
 
-crtf() {
-  scrot 'Screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Imagens/'
-  notify-send "Screenshot" "A Screenshot foi salva na pasta Imagens"
-}
+##
+# Cancelled? bail out
+##
+if test -z ${choice}
+then
+    exit
+fi
 
-cstc() {
-  ffcast -q png /tmp/screenshot_clip.png
-  xclip -selection clipboard -t image/png /tmp/screenshot_clip.png
-  rm /tmp/screenshot_clip.png
-  notify-send "Screenshot" "Screenshot copied to Clipboard"
-}
-
-cstf() {
-  dt=$(date '+%d-%m-%Y %H:%M:%S')
-  ffcast -q png "$screenshot_directory/$dt.png"
-  notify-send "Screenshot" "Screenshot saved to $screenshot_directory"
-}
-
-rgrtf() {
-  notify-send "Screenshot" "Select a region to record"
-  dt=$(date '+%d-%m-%Y %H:%M:%S')
-  ffcast -q $(slop -n -f '-g %g ' && countdown) rec /tmp/screenshot_gif.mp4
-  notify-send "Screenshot" "Converting to gif... (this can take a while)"
-  video_to_gif /tmp/screenshot_gif.mp4 "$screenshot_directory/$dt.gif"
-  rm /tmp/screenshot_gif.mp4
-  notify-send "Screenshot" "Recording saved to $screenshot_directory"
-}
-
-rgstf() {
-  countdown
-  dt=$(date '+%d-%m-%Y %H:%M:%S')
-  ffcast -q rec /tmp/screenshot_gif.mp4
-  notify-send "Screenshot" "Converting to gif... (this can take a while)"
-  video_to_gif /tmp/screenshot_gif.mp4 "$screenshot_directory/$dt.gif"
-  rm /tmp/screenshot_gif.mp4
-  notify-send "Screenshot" "Recording saved to $screenshot_directory"
-}
-
-rvrtf() {
-  notify-send "Screenshot" "Select a region to record"
-  dt=$(date '+%d-%m-%Y %H:%M:%S')
-  ffcast -q $(slop -n -f '-g %g ' && countdown) rec "$screenshot_directory/$dt.mp4"
-  notify-send "Screenshot" "Recording saved to $screenshot_directory"
-}
-
-rvstf() {
-  countdown
-  dt=$(date '+%d-%m-%Y %H:%M:%S')
-  ffcast -q rec "$screenshot_directory/$dt.mp4"
-  notify-send "Screenshot" "Recording saved to $screenshot_directory"
-}
-
-get_options() {
-  echo "  Capture Region  Clip"
-  echo "  Capture Region  File"
-  echo "  Capture Screen  Clip"
-  echo "  Capture Screen  File"
-  echo "  Record Region  File (GIF)"
-  echo "  Record Screen  File (GIF)"
-  echo "  Record Region  File (MP4)"
-  echo "  Record Screen  File (MP4)"
-}
-
-check_deps() {
-  if ! hash $1 2>/dev/null; then
-    echo "Error: This script requires $1 please, install $1"
-    exit 1
-  fi
-}
-
-main() {
-  # check dependencies
-  check_deps scrot
-  check_deps slop
-  check_deps ffcast
-  check_deps ffmpeg
-  check_deps xclip
-  check_deps rofi
-
-  if [[ $1 == '--help' ]] || [[ $1 = '-h' ]]
-  then
-    echo ### rofi-screenshot
-    echo USAGE: rofi-screenshot [OPTION]
-    echo \(no option\)
-    echo "    show the screenshot menu"
-    echo -s, --stop
-    echo "    stop recording"
-    echo -h, --help
-    echo "    this screen"
-    exit 1
-  fi
-
-  if [[ $1 = '--stop' ]] || [[ $1 = '-s' ]]
-  then
-    pkill -fxn '(/\S+)*ffmpeg\s.*\sx11grab\s.*'
-    exit 1
-  fi
-
-  # Get choice from rofi
-  choice=$( (get_options) | rofi -dmenu -i -fuzzy -p "Screenshot" )
-
-  # If user has not picked anything, exit
-  if [[ -z "${choice// }" ]]; then
-      exit 1
-  fi
-
-  # run the selected command
-  case $choice in
-    '  Capture Region  Clip')
-      crtc
-      ;;
-    '  Capture Region  File')
-      crtf
-      ;;
-    '  Capture Screen  Clip')
-      cstc
-      ;;
-    '  Capture Screen  File')
-      cstf
-      ;;
-    '  Record Region  File (GIF)')
-      rgrtf
-      ;;
-    '  Record Screen  File (GIF)')
-      rgstf
-      ;;
-    '  Record Region  File (MP4)')
-      rvrtf
-      ;;
-    '  Record Screen  File (MP4)')
-      rvstf
-      ;;
-  esac
-
-  # done
-  set -e
-}
-
-main $1 &
-
-exit 0
-
-!/bin/bash
+# check if choice exists
+if test ${COMMANDS[$choice]+isset}
+then
+    # Execute the choice
+    eval echo "Executing: ${COMMANDS[$choice]}"
+    eval ${COMMANDS[$choice]}
+else
+ eval  $choice | rofi
+ # prefer my above so I can use this same script to also launch apps like geany or leafpad etc (DK) 
+ #   echo "Unknown command: ${choice}" | rofi -dmenu -p "error"
+fi

@@ -2,20 +2,21 @@
 
 # Launch rofi with custom configuration
 rofi -show drun -sidebar-mode \
--modi run,drun,window,tools:~/.config/rofi/scripts/tools.sh \
--hide-scrollbar true \
--bw 2 \
--lines 12 \
--padding 24 \
--width 60 \
--location 0 \
--columns 3 \
--font "Noto Sans 10" \
--color-enabled true \
--color-window "#2d3039, #2d3039, #2d3039" \
--color-normal "#2d3039, #d8dee8, #2d3039, #2d3039, #4ec2e8" \
--color-active "#2d3039, #b48ead, #2d3039, #2d3039, #91BEBBFF" \
--color-urgent "#2d3039, #ebcb8b, #2d3039, #2d3039, #ebcb8b"
+-modi run,drun,window \
+
+# -hide-scrollbar true \
+# -bw 2 \
+# -lines 12 \
+# -padding 24 \
+# -width 60 \
+# -location 0 \
+# -columns 3 \
+# -font "Noto Sans 10" \
+# -color-enabled true \
+# -color-window "#2d3039, #2d3039, #2d3039" \
+# -color-normal "#2d3039, #d8dee8, #2d3039, #2d3039, #4ec2e8" \
+# -color-active "#2d3039, #b48ead, #2d3039, #2d3039, #91BEBBFF" \
+# -color-urgent "#2d3039, #ebcb8b, #2d3039, #2d3039, #ebcb8b"
 
 
 # Light Theme
